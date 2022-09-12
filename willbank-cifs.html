@@ -10,6 +10,21 @@
            var userIdFromQuery = queryParameters.get('uid')
             ? queryParameters.get('uid')
             : 'defaultId0000';
+            
+           var delay_days = queryParameters.get('delayDays')
+            ? parseInt(queryParameters.get('delayDays'))
+            : null;
+            
+            function updateCif(cif_name,cif_type,cif_value) { 
+                window.Helpshift(
+                    "setCustomIssueFields" : {
+                        cif_name : {
+                            type: cif_type,
+                            value: cif_value
+                        }
+                    }
+            }
+            
         </script>
     </head> 
     <body>
@@ -25,8 +40,13 @@
       language: LANGUAGE,
       userId: userIdFromQuery
     };
+    
+    if (delayDays) {
+        updateCif("delay_days","number", delayDays);
+    }
+    
   }) ();
-
+    
   !function(t,e){if("function"!=typeof window.Helpshift){var n=function(){n.q.push(arguments)};n.q=[],window.Helpshift=n;var i,a=t.getElementsByTagName("script")[0];if(t.getElementById(e))return;i=t.createElement("script"),i.async=!0,i.id=e,i.src="https://webchat.helpshift.com/latest/webChat.js";var o=function(){window.Helpshift("init")};window.attachEvent?i.attachEvent("onload",o):i.addEventListener("load",o,!1),a.parentNode.insertBefore(i,a)}else window.Helpshift("update")}(document,"hs-chat");
 </script>
         <body>
