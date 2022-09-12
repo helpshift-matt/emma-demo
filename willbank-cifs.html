@@ -14,18 +14,7 @@
            var delay_days = queryParameters.get('delayDays')
             ? parseInt(queryParameters.get('delayDays'))
             : null;
-            
-            function updateCif(cif_name,cif_type,cif_value) { 
-                window.Helpshift(
-                    "setCustomIssueFields", {
-                        cif_name : {
-                            type: cif_type,
-                            value: cif_value
-                        }
-                    }
-                );
-            }
-            
+
         </script>
     </head> 
     <body>
@@ -41,7 +30,18 @@
       language: LANGUAGE,
       userId: userIdFromQuery
     };
-    
+                
+    function updateCif(cif_name,cif_type,cif_value) { 
+        window.Helpshift(
+            "setCustomIssueFields", {
+                cif_name : {
+                    type: cif_type,
+                    value: cif_value
+                }
+            }
+        );
+    }
+            
     if (delay_days) {
         updateCif("delay_days","number", delay_days);
     }
