@@ -1,0 +1,33 @@
+<html lang="pt-br">
+    <head>
+        <style>
+            body {
+                background-image: url("https://newcdn.guiadoinvestidor.com.br/gdi-static/2021/11/Will-Bank-1-960x479.png")
+            }
+        </style>
+        <script>
+           var queryParameters =new URLSearchParams(params = location.href.split('?')[1])
+           var userIdFromQuery = queryParameters.get('uid')
+            ? queryParameters.get('uid')
+            : 'defaultId0000';
+        </script>
+    </head> 
+    <body>
+<script>
+(function () {
+    var PLATFORM_ID = "meu-pag_platform_20220721192146272-97c4de119641af7",
+    DOMAIN = "meu-pag",
+    LANGUAGE = "en";
+
+    window.helpshiftConfig = {
+      platformId: PLATFORM_ID,
+      domain: DOMAIN,
+      language: LANGUAGE,
+      userId: userIdFromQuery
+    };
+  }) ();
+
+  !function(t,e){if("function"!=typeof window.Helpshift){var n=function(){n.q.push(arguments)};n.q=[],window.Helpshift=n;var i,a=t.getElementsByTagName("script")[0];if(t.getElementById(e))return;i=t.createElement("script"),i.async=!0,i.id=e,i.src="https://webchat.helpshift.com/latest/webChat.js";var o=function(){window.Helpshift("init")};window.attachEvent?i.attachEvent("onload",o):i.addEventListener("load",o,!1),a.parentNode.insertBefore(i,a)}else window.Helpshift("update")}(document,"hs-chat");
+</script>
+        <body>
+</html>
