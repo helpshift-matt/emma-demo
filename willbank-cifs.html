@@ -31,14 +31,16 @@
       userId: userIdFromQuery
     };
                 
-    function updateCif(cif_name,cif_type,cif_value) { 
+function updateCif(cif_name,cif_type,cif_value) { 
+        var cif_object = {};
+        cif_object[cif_name] = {
+            type: cif_type,
+            value: cif_value
+        };        
+        console.log(cif_object);
         window.Helpshift(
-            "setCustomIssueFields", {
-                cif_name : {
-                    type: cif_type,
-                    value: cif_value
-                }
-            }
+            "setCustomIssueFields",
+            cif_object
         );
     }
             
