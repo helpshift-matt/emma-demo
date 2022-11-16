@@ -1,6 +1,7 @@
 <html>
   <head>
-        <script>
+    <title>v0.0.4</title>
+    <script>
        var queryParameters =new URLSearchParams(params = location.href.split('?')[1])
        var userIdFromQuery = queryParameters.get('uid')
         ? queryParameters.get('uid')
@@ -28,7 +29,10 @@
     window.helpshiftConfig = {
       platformId: PLATFORM_ID,
       domain: DOMAIN,
-      language: LANGUAGE
+      language: LANGUAGE,
+      userId: userIdFromQuery,
+      userEmail: userEmailFromQuery,
+      userName: userNameFromQuery
     };
   }) ();
 
