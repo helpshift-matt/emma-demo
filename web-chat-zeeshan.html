@@ -1,5 +1,20 @@
 <html>
   <head>
+        <script>
+       var queryParameters =new URLSearchParams(params = location.href.split('?')[1])
+       var userIdFromQuery = queryParameters.get('uid')
+        ? queryParameters.get('uid')
+        : 'defaultId0000';
+      
+      var userEmailFromQuery = queryParameters.get('email')
+        ? queryParameters.get('email')
+        : 'matt.emma@helpshift.com';
+      
+      var userNameFromQuery = queryParameters.get('uname')
+        ? queryParameters.get('uname')
+        : 'Friendly User';
+    </script>
+  </head>
   </head>
   <body>
     <h1>WELCOME!</h1>
@@ -30,7 +45,10 @@
     window.helpshiftConfig = {
       platformId: PLATFORM_ID,
       domain: DOMAIN,
-      language: LANGUAGE
+      language: LANGUAGE,
+      userId: userIdFromQuery,
+      userEmail: userEmailFromQuery,
+      userName: userNameFromQuery
     };
   }) ();
 
