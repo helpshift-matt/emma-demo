@@ -3,7 +3,7 @@
   </head>
   <body>
     <h1>WELCOME!</h1>
-    <img style="text-align: center; max-width: 450px" src="https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/272959182_425165556073449_7097909623471240456_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=9267fe&_nc_ohc=tMZFze7jlfQAX9yZ8sl&_nc_ht=scontent-sea1-1.xx&oh=00_AT8NHAMJ95VAdiXSh2ezAxshtQIM-3dmA0oIKyAIazmcfw&oe=620CE10F" />
+    <img style="text-align: center; max-width: 450px" src="https://www.pgconnects.com/london/wp-content/uploads/sites/4/2016/12/logo-Tapjoy-300x.png" />
 <script>
 (function () {
     var PLATFORM_ID = "emma-demo_platform_20210415045125900-416eb6525f4c8ed",
@@ -18,6 +18,21 @@
   }) ();
 
   !function(t,e){if("function"!=typeof window.Helpshift){var n=function(){n.q.push(arguments)};n.q=[],window.Helpshift=n;var i,a=t.getElementsByTagName("script")[0];if(t.getElementById(e))return;i=t.createElement("script"),i.async=!0,i.id=e,i.src="https://webchat.helpshift.com/latest/webChat.js";var o=function(){window.Helpshift("init")};window.attachEvent?i.attachEvent("onload",o):i.addEventListener("load",o,!1),a.parentNode.insertBefore(i,a)}else window.Helpshift("update")}(document,"hs-chat");
+
+function updateCif(cif_name,cif_type,cif_value) { 
+        var cif_object = {};
+        cif_object[cif_name] = {
+            type: cif_type,
+            value: cif_value
+        };        
+        console.log(cif_object);
+        window.Helpshift(
+            "setCustomIssueFields",
+            cif_object
+        );
+    }
+
+  updateCif('dsa_bona_fida_confirm','checkbox','yes');
 </script>
     
     <!--   
