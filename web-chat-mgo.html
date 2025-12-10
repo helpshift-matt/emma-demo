@@ -16,8 +16,61 @@
     </script>
   </head>
   <body>
-    <h1>WELCOME!</h1>
-    <img style="text-align: center; max-width: 450px" src="https://sm.ign.com/ign_ap/cover/m/monopoly-g/monopoly-go_dcxt.jpg" />
+    <h1>WELCOME!</h1><div class="image-container">
+  <img src="https://sm.ign.com/ign_ap/cover/m/monopoly-g/monopoly-go_dcxt.jpg" alt="Monopoly Go Cover" class="original-image">
+
+  <div class="image-overlay">
+    Sandbox MGO
+  </div>
+</div>
+
+<style>
+  /* 1. Set up the container */
+  .image-container {
+    /* Required: This makes sure the absolutely positioned overlay 
+       is positioned relative to this container, not the entire page. */
+    position: relative;
+    /* Optional: Sets a maximum width for the image and container */
+    max-width: 450px;
+    /* Optional: Centers the container on the page */
+    margin: 0 auto; 
+    /* Optional: Makes sure the overlay doesn't spill outside the image area */
+    display: inline-block;
+  }
+
+  /* 2. Style the image */
+  .original-image {
+    /* Ensures the image takes up the full width of the container */
+    width: 100%;
+    /* Ensures the image maintains its aspect ratio */
+    height: auto; 
+    display: block;
+  }
+
+  /* 3. Style the overlay text */
+  .image-overlay {
+    /* Required: Takes the element out of the normal flow and positions it
+       relative to the nearest positioned ancestor (the .image-container). */
+    position: absolute;
+    
+    /* Center the text both horizontally and vertically */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Text styling for visibility and appearance */
+    color: white; /* White text */
+    font-size: 3em; /* Large font size */
+    font-weight: bold;
+    text-align: center;
+    /* Outline for better visibility over various background colors */
+    text-shadow: 
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000;
+  }
+</style>
 <script>
 (function () {
       var PLATFORM_ID = "monopolygo_platform_20231128134900644-ba6b2f89eb23033",
